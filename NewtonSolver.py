@@ -1,8 +1,7 @@
 from sympy import *
-init_printing(use_unicode=True)
 
 MAX_ITERATIONS = 3000
-CLOSENESS_THRESH = 0.000001
+CLOSENESS_THRESH = 0.00000001
 
 def getStartingInput():
     print("Please enter the equation to evaluate (example: 3*x**2 + 4*x + 1/2): ")
