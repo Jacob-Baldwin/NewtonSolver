@@ -4,6 +4,15 @@ MAX_ITERATIONS = 1000
 CLOSENESS_THRESH = 0.000001
 DECIMAL_PRECISION = 6
 
+def loadConfig():
+
+    #Loads parameters from config.ini
+
+    config_file = open('config.ini','r')
+    MAX_ITERATIONS = config_file.readline().split()[1]
+    CLOSENESS_THRESH = config_file.readline().split()[1]
+    DECIMAL_PRECISION = config_file.readline().split()[1]
+
 def getStartingInput():
 
     #Prompts the user for an equation and a point for x0.
@@ -97,6 +106,7 @@ def newtonsMethod(equation, starting_point):
         number_of_iterations = number_of_iterations + 1
 
 def main():
+    loadConfig()
     equation, starting_point = getStartingInput()
 
     try:
